@@ -11,7 +11,7 @@ vehicle_scc = SCC$scc[grep("Vehicle",SCC$scc_level_two)]
 vehicle_emi = NEI %>% filter(scc %in% vehicle_scc) %>% 
   filter(fips == "24510")
 
-View(vehicle_emi)
+
 
 vehicle_emi_year = aggregate(vehicle_emi$emissions, list(vehicle_emi$year), sum)%>% 
   rename(years = Group.1, emissions = x) %>% mutate(years = as.factor(years))
